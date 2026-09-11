@@ -1,0 +1,105 @@
+@charset "UTF-8";
+@import "base";
+
+$areaLeftWidth: 80%;
+$popupPadding: 4px;
+
+@mixin button {
+    padding: 3px 10px;
+    border: 0;
+    background: #d4d4d4;
+    color: #666;
+    font: 400 11px / 1 "Tahoma", "Malgun Gothic", "맑은 고딕", sans-serif;
+    letter-spacing: 0.05em;
+    cursor: pointer;
+    box-shadow: inset 1px 1px 0 0 #ffffff, inset -1px -1px 0 0 #5c5c5c, inset 2px 2px 0 0 rgba(255, 255, 255, 0.6), inset -2px -2px 0 0 #9a9a9a;
+
+    &:focus-visible {
+        outline: 1px dotted #2d3748;
+        outline-offset: -4px;
+    }
+
+    &:active {
+        box-shadow: inset 1px 1px 0 0 #5c5c5c, inset -1px -1px 0 0 #ffffff, inset 2px 2px 0 0 #9a9a9a, inset -2px -2px 0 0 rgba(255, 255, 255, 0.6);
+    }
+}
+
+.container {
+    display: flex;
+
+    .area {
+        position: relative;
+        height: 100vh;
+
+        &-left {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: $areaLeftWidth;
+            border-right: 1px solid #000;
+
+            > button {
+                @include button;
+            }
+        }
+
+        &-right {
+            width: 100% - $areaLeftWidth;
+            padding: 4px;
+
+            strong {
+                display: block;
+                font-weight: 700;
+            }
+
+            button {
+                @include button;
+            }
+        }
+    }
+}
+
+#mainPopup {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 99;
+    width: 428px;
+    border: 1px solid #000;
+
+    .swiper {
+        width: 100%;
+        overflow: hidden;
+    }
+
+    .popup-content {
+        width: 100%;
+
+        img {
+            width: 100%;
+        }
+    }
+
+    .popup-footer {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        padding: 0 $popupPadding $popupPadding;
+
+        .chk_today {
+            display: flex;
+            align-items: center;
+            gap: 4px;
+
+            label {
+                line-height: 1;
+                font-family: ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+            }
+        }
+
+        .popup_close {
+            font-family: ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+        }
+    }
+}

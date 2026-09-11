@@ -1,0 +1,73 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="apple-touch-icon" sizes="180x180" href="./resources/images/favicon/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="./resources/images/favicon/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="./resources/images/favicon/favicon-16x16.png">
+    <link rel="stylesheet" href="./resources/css/lib/swiper-bundle.min.css">
+    <link rel="stylesheet" href="./resources/css/style.min.css">
+    <title>notice-popup</title>
+</head>
+<body>
+<div class="wrap">
+    <header>
+        <h1>Notice Popup</h1>
+        <a href="https://github.com/happycodehouse/notice-popup" rel="noopener noreferrer" target="_blank">GitHub</a>
+        <p>Images sourced from
+            <a href="https://adoraudition.world/ko" rel="noopener noreferrer" target="_blank">ador</a> and
+            <a href="https://newjeans.kr/">newjeans</a></p>
+    </header>
+    <div class="container">
+        <div class="area area-left">
+            <button type="button">reset</button>
+            <div id="mainPopup" data-open="2026/09/10 09:00:00" data-close="2026/09/12 21:59:59">
+                <div class="swiper">
+                    <div class="swiper-wrapper">
+                        <div class="swiper-slide">
+                            <div class="popup-content">
+                                <img src="./resources/images/audition-01.jpg" alt="">
+                            </div>
+                        </div>
+                        <div class="swiper-slide">
+                            <div class="popup-content">
+                                <img src="./resources/images/audition-02.jpg" alt="">
+                            </div>
+                        </div>
+                        <div class="swiper-slide">
+                            <div class="popup-content">
+                                <img src="./resources/images/audition-03.jpg" alt="">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="swiper-"></div>
+                <div class="popup-footer">
+                    <div class="chk_today">
+                        <input type="checkbox" id="chkToday">
+                        <label for="chkToday">Do not show for one day</label>
+                    </div>
+                    <button type="button" class="popup_close">Close</button>
+                </div>
+            </div>
+        </div>
+        <div class="area area-right">
+            <strong>Popup Controls</strong>
+            <p>Add or remove popups dynamically.</p>
+            <button type="button" data-action="add">Add</button>
+            <button type="button" data-action="remove">Remove</button>
+        </div>
+    </div>
+</div>
+<script src="./resources/js/lib/swiper-bundle.min.js"></script>
+<script>
+    const swiper = new Swiper('.swiper', {
+        autoHeight: true
+    });
+
+
+</script>
+</body>
+</html>
