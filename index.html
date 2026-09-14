@@ -67,9 +67,9 @@
         const removeBtn = document.querySelector('[data-action="remove"]');
         const resetBtn = document.querySelector('[data-action="reset"]');
 
-        function setCookie(name, value, days) {
+        function setCookie(name, value) {
             const date = new Date();
-            date.setTime(date.getTime() + days * 24 * 60 * 60 * 1000);
+            date.setHours(23, 59, 59, 999);
             document.cookie = `${name}=${value}; expires=${date.toUTCString()}; path=/`;
         }
 
@@ -129,7 +129,7 @@
 
         popup.querySelector('.popup_close').addEventListener('click', () => {
             if (document.getElementById('chkToday').checked) {
-                setCookie(cookieName, 'true', 1);
+                setCookie(cookieName, 'true');
             }
             popup.style.display = 'none';
         });
